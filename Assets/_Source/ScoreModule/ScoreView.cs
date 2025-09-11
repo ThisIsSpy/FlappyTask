@@ -1,11 +1,18 @@
 ﻿using TMPro;
 using UnityEngine;
+using VContainer;
 
 namespace ScoreModule 
 {
     public class ScoreView : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI scoreLabel;
+        private TextMeshProUGUI scoreLabel;
+
+        [Inject]
+        public void Construct(TextMeshProUGUI scoreLabel)
+        {
+            this.scoreLabel = scoreLabel;
+        }
 
         public void UpdateScoreLabel(int score)
         {

@@ -3,12 +3,19 @@ using ObstacleModule;
 using ScoreModule;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using VContainer;
 
 namespace PlayerModule 
 {
     public class PlayerCollider : MonoBehaviour
     {
-        [SerializeField] private ScoreController scoreController;
+        private ScoreController scoreController;
+
+        [Inject]
+        public void Construct(ScoreController scoreController)
+        {
+            this.scoreController = scoreController;
+        }
 
         private void OnCollisionEnter2D(Collision2D collision)
         {

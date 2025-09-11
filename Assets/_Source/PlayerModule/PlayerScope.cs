@@ -10,9 +10,14 @@ namespace PlayerModule
         protected override void Configure(IContainerBuilder builder)
         {
             builder.RegisterInstance(playerStats);
+            builder.RegisterInstance(Camera.main);
+
             builder.Register<PlayerModel>(Lifetime.Singleton);
+
             builder.RegisterComponentInHierarchy<PlayerView>();
             builder.RegisterComponentInHierarchy<PlayerController>();
+            builder.RegisterComponentInHierarchy<PlayerCollider>();
+            builder.RegisterComponentInHierarchy<Rigidbody2D>();
         }
     }
 }

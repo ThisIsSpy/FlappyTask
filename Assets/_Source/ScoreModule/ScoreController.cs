@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using VContainer;
 
 namespace ScoreModule 
 {
@@ -7,6 +8,7 @@ namespace ScoreModule
         public ScoreModel Model { get; private set; }
         private ScoreView view;
 
+        [Inject]
         public void Construct(ScoreModel model, ScoreView view)
         {
             Model = model;
@@ -18,6 +20,11 @@ namespace ScoreModule
         public void InvokeUpdateScoreLabel()
         {
             view.UpdateScoreLabel(Model.Score);
+        }
+
+        void OnDestroy()
+        {
+            Model.OnScoreChange -= InvokeUpdateScoreLabel;
         }
     }
 }

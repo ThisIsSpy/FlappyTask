@@ -1,27 +1,31 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using VContainer;
 
 namespace LevelGeneratorModule 
 {
     public class LevelSectionGenerator : MonoBehaviour
     {
-        [SerializeField] private List<LevelSection> levelSectionList;
-        [SerializeField] private Transform startingPosition;
-        [SerializeField] private float spawningInterval;
+        private List<LevelSection> levelSectionList;
+        private Transform startingPosition;
+        private const float SPAWNING_INTERVAL = 17.8f;
         private Vector3 spawningPos;
 
-        void Start()
+        [Inject]
+        public void Construct(List<LevelSection> levelSectionList, Transform startingPosition)
         {
-            spawningPos = startingPosition.position;
-            spawningPos.x += spawningInterval;
-            Debug.Log(spawningPos);
+            this.levelSectionList = levelSectionList;
+            this.startingPosition = startingPosition;
+
+            spawningPos = this.startingPosition.position;
+            spawningPos.x += SPAWNING_INTERVAL;
         }
 
         public void GenerateLevelSection()
         {
             int index = Random.Range(0, levelSectionList.Count);
             GameObject levelSection = Instantiate(levelSectionList[index].gameObject, spawningPos, Quaternion.identity);
-            spawningPos.x += spawningInterval;
+            spawningPos.x += SPAWNING_INTERVAL;
         }
     }
 }

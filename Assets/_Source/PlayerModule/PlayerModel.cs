@@ -19,10 +19,10 @@ namespace PlayerModule
             set { jumpVelocity = Mathf.Clamp(value, 1, 100); }
         }
 
-        public PlayerModel(float speed, float jumpVelocity)
+        public PlayerModel(PlayerStats playerStats)
         {
-            Speed = speed;
-            JumpVelocity = jumpVelocity;
+            Speed = playerStats.Speed;
+            JumpVelocity = playerStats.JumpVelocity;
         }
     }
 }
