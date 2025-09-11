@@ -22,7 +22,6 @@ namespace LevelGeneratorModule
             int index = Random.Range(0, levelSectionList.Count);
             GameObject levelSection = Instantiate(levelSectionList[index].gameObject, spawningPos, Quaternion.identity);
             spawningPos.x += spawningInterval;
-            Debug.Log("should have generate a section");
         }
     }
 }

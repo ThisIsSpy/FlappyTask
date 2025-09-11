@@ -22,23 +22,6 @@ namespace PlayerModule
             playerCamera.transform.eulerAngles = Vector3.zero;
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.collider.TryGetComponent(out Obstacle _))
-            {
-                SceneManager.LoadScene("Game");
-            }
-        }
-
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if(collision.TryGetComponent(out LevelSectionGeneratorTrigger trigger))
-            {
-                trigger.InvokeLevelSectionGenerator();
-                Debug.Log("triggered");
-            }
-        }
-
         public void LinearMove(float speed)
         {
             playerRB.linearVelocityX = speed;
