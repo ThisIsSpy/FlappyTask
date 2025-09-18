@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5397280787145836231}
   - component: {fileID: 3425779831397309684}
   - component: {fileID: 6074101702464051041}
+  - component: {fileID: 723570106809869979}
   m_Layer: 0
   m_Name: LevelCeiling
   m_TagString: Untagged
@@ -134,6 +135,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &723570106809869979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3577862892757188393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbbaa9ccbdad79e4399595ef1e42968c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMoving: 0
+  direction: 0
+  speed: 0
+  cooldown: 0
 --- !u!1 &6169977686720476715
 GameObject:
   m_ObjectHideFlags: 0

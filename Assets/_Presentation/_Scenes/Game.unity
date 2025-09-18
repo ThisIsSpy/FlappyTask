@@ -807,7 +807,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64eb63e680c89d04999a645651fb934a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 230634103}
 --- !u!4 &823171452
 Transform:
   m_ObjectHideFlags: 0
@@ -969,9 +968,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 844450746}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fd910ae323b3bc4f90b0e27c2d69908, type: 3}
+  m_Script: {fileID: 11500000, guid: b8d37824d3d98e24ca4e4f4c4b35407b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentReference:
+    TypeName: PlayerModule.PlayerScope
+  autoRun: 1
+  autoInjectGameObjects: []
+  startLabel: {fileID: 844450748}
+  listener: {fileID: 823171451}
 --- !u!1 &850644119
 GameObject:
   m_ObjectHideFlags: 0
