@@ -24,6 +24,8 @@ namespace CoreModule
 
             scoreModel = new();
             scoreController.Construct(scoreModel, scoreView);
+
+            Debug.Log("booted");
         }
     }
 }
