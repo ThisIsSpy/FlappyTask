@@ -12,7 +12,7 @@ namespace CoreModule
         [SerializeField] private PlayerController playerController;
         [SerializeField] private float initialPlayerSpeed;
         [SerializeField] private float initialPlayerJumpVelocity;
-        [Header("Score Stufff")]
+        [Header("Score Stuff")]
         private ScoreModel scoreModel;
         [SerializeField] private ScoreView scoreView;
         [SerializeField] private ScoreController scoreController;
